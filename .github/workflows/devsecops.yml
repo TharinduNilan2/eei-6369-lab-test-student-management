@@ -27,7 +27,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mnv verify sonar:sonar -Dsonar.projectKey=TharinduNilan_eei-6369-lab-test-student-management || true
+        run: mvn verify sonar:sonar -Dsonar.projectKey=TharinduNilan_eei-6369-lab-test-student-management || true
 
       - name: Build Container
         run: docker build -t eei-6369-lab-test-student-management:${{ github.sha }} .
@@ -55,4 +55,4 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: 
-          docker tag eei-6369-lab-test-student-management:${{ github.sha }} $ECR_REGISTRY/eei-6369-lab-test-student-management:{{ github.sha }}
+          docker tag eei-6369-lab-test-student-management:${{ github.sha }} $ECR_REGISTRY/eei-6369-lab-test-student-management:${{ github.sha }}
