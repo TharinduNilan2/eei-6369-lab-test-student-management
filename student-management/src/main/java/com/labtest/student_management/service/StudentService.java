@@ -50,6 +50,7 @@ public class StudentService {
         student.setFullName(updatedStudent.getFullName());
         student.setEmail(updatedStudent.getEmail());
         student.setPhone(updatedStudent.getPhone());
+        student.setDateOfBirth(updatedStudent.getDateOfBirth());
         student.setCourse(updatedStudent.getCourse());
 
         return studentRepository.save(student);

@@ -26,15 +26,18 @@ public class Student {
 
     private String course;
 
+    private java.time.LocalDate dateOfBirth;
+
     public Student() {
     }
 
     public Student(String fullName, String email,
-                   String phone, String course) {
+                   String phone, String course, java.time.LocalDate dateOfBirth) {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.course = course;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public Long getId() {
@@ -71,5 +74,13 @@ public class Student {
 
     public void setCourse(String course) {
         this.course = course;
+    }
+
+    public java.time.LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(java.time.LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }
